@@ -52,30 +52,28 @@ public class pnlRegistroGen extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         btnUser = new com.k33ptoo.components.KButton();
         cbLista = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pLogin.setkEndColor(new java.awt.Color(0, 0, 0));
-        pLogin.setkStartColor(new java.awt.Color(0, 0, 0));
+        pLogin.setkEndColor(new java.awt.Color(0, 102, 102));
+        pLogin.setkStartColor(new java.awt.Color(102, 255, 102));
         pLogin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        pLogin.add(txtCorre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 193, 602, 39));
-        pLogin.add(txtUs, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 45, 602, 39));
-        pLogin.add(txtContras, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 116, 602, 39));
+        pLogin.add(txtCorre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 602, 39));
+        pLogin.add(txtUs, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 602, 39));
+        pLogin.add(txtContras, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 602, 39));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Correo electronico:");
-        pLogin.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 167, -1, -1));
+        pLogin.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Usuario:");
-        pLogin.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 13, -1, -1));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel4.setText("Registro");
+        pLogin.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Contraseña:");
-        pLogin.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
+        pLogin.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, -1, -1));
 
         btnUser.setText("Registrar Usuario");
         btnUser.addActionListener(new java.awt.event.ActionListener() {
@@ -86,9 +84,13 @@ public class pnlRegistroGen extends javax.swing.JPanel {
         pLogin.add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 560, -1, -1));
 
         cbLista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        pLogin.add(cbLista, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 190, 30));
+        pLogin.add(cbLista, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, 190, 30));
 
-        add(pLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 690));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel6.setText("Usuario:");
+        pLogin.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
+
+        add(pLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 690));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActionPerformed
@@ -102,6 +104,7 @@ public class pnlRegistroGen extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     public com.k33ptoo.components.KGradientPanel pLogin;
     public javax.swing.JTextField txtContras;
     public javax.swing.JTextField txtCorre;

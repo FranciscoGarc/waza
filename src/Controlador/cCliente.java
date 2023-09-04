@@ -29,13 +29,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Fran
  */
-public class cCliente implements  ActionListener, MouseListener{
+public class cCliente implements ActionListener, MouseListener {
+
     private mCliente modeloCliente;
     private mUsuario modeloUsuario;
     private pnlControlClientes vistaClientes;
     private MostrarDatosTabla mostrarDatosTabla;
-    
-    public cCliente(pnlControlClientes vistasClientes, mCliente modeloCliente){
+
+    public cCliente(pnlControlClientes vistasClientes, mCliente modeloCliente) {
         this.modeloCliente = modeloCliente;
         this.vistaClientes = vistasClientes;
         this.vistaClientes.btnRegistrar.addActionListener(this);
@@ -69,73 +70,75 @@ public class cCliente implements  ActionListener, MouseListener{
         cargarDatosTabla();
     }
 
-        private void cargarDatosTabla() {            
-            mostrarDatosTabla = new MostrarDatosTabla();
-            mostrarDatosTabla.mostrarDatosEnTabla(vistaClientes.tbDatosCl);           
+    private void cargarDatosTabla() {
+        mostrarDatosTabla = new MostrarDatosTabla();
+        mostrarDatosTabla.mostrarDatosEnTabla(vistaClientes.tbDatosCl);
 
-}
-        //Funcion para buscar
-        private void buscarDatos() {
+    }
+    //Funcion para buscar
+
+    private void buscarDatos() {
         String textoBusqueda = vistaClientes.txtSearch.getText();
         mostrarDatosTabla.buscarDatosEnTabla(vistaClientes.tbDatosCl, textoBusqueda);
     }
-        //Funcion para mosstrar los datos en los textfields
-        private void mostrarDatosEnCamposTexto() {
-            int filaSeleccionada = vistaClientes.tbDatosCl.getSelectedRow();
-            if (filaSeleccionada >= 0 && filaSeleccionada < vistaClientes.tbDatosCl.getRowCount()) {
-                int idUsuario = Integer.parseInt(vistaClientes.tbDatosCl.getValueAt(filaSeleccionada, 0).toString());
-                String usuario = getCellValueOrDefault(vistaClientes.tbDatosCl, filaSeleccionada, 1, "");
-                String contraEncrypted = getCellValueOrDefault(vistaClientes.tbDatosCl, filaSeleccionada, 2, "");
-                String correo = getCellValueOrDefault(vistaClientes.tbDatosCl, filaSeleccionada, 3, "");
-                int idCliente = Integer.parseInt(getCellValueOrDefault(vistaClientes.tbDatosCl, filaSeleccionada, 4, "0"));
-                String nombre = getCellValueOrDefault(vistaClientes.tbDatosCl, filaSeleccionada, 5, "");
-                String apellido = getCellValueOrDefault(vistaClientes.tbDatosCl, filaSeleccionada, 6, "");
-                String telefono = getCellValueOrDefault(vistaClientes.tbDatosCl, filaSeleccionada, 7, "");
-                String direccion = getCellValueOrDefault(vistaClientes.tbDatosCl, filaSeleccionada, 8, "");
-                String dui = getCellValueOrDefault(vistaClientes.tbDatosCl, filaSeleccionada, 9, "");
+    //Funcion para mosstrar los datos en los textfields
 
-                vistaClientes.txtUser.setText(usuario);
-                vistaClientes.txtName.setText(nombre);
-                vistaClientes.txtApe.setText(apellido);
-                vistaClientes.txtTel.setText(telefono);
-                vistaClientes.txtDirec.setText(direccion);
-                vistaClientes.txtDui.setText(dui);
-                vistaClientes.txtCorreo.setText(correo);
-                        // Desencriptar y mostrar la contraseña en el campo de texto
-                String contraDesencriptada = crypt.decryptPassword(contraEncrypted);
-                vistaClientes.txtContra.setText(contraDesencriptada);
-            } else {
-                // Si no hay filas seleccionadas o la selección es inválida, limpiamos los campos de texto.
-                vistaClientes.txtUser.setText("");
-                vistaClientes.txtName.setText("");
-                vistaClientes.txtApe.setText("");
-                vistaClientes.txtTel.setText("");
-                vistaClientes.txtDirec.setText("");
-                vistaClientes.txtDui.setText("");
-                vistaClientes.txtCorreo.setText("");
-                vistaClientes.txtContra.setText("");
-            }
-        }
+    private void mostrarDatosEnCamposTexto() {
+        int filaSeleccionada = vistaClientes.tbDatosCl.getSelectedRow();
+        if (filaSeleccionada >= 0 && filaSeleccionada < vistaClientes.tbDatosCl.getRowCount()) {
+            int idUsuario = Integer.parseInt(vistaClientes.tbDatosCl.getValueAt(filaSeleccionada, 0).toString());
+            String usuario = getCellValueOrDefault(vistaClientes.tbDatosCl, filaSeleccionada, 1, "");
+            String contraEncrypted = getCellValueOrDefault(vistaClientes.tbDatosCl, filaSeleccionada, 2, "");
+            String correo = getCellValueOrDefault(vistaClientes.tbDatosCl, filaSeleccionada, 3, "");
+            int idCliente = Integer.parseInt(getCellValueOrDefault(vistaClientes.tbDatosCl, filaSeleccionada, 4, "0"));
+            String nombre = getCellValueOrDefault(vistaClientes.tbDatosCl, filaSeleccionada, 5, "");
+            String apellido = getCellValueOrDefault(vistaClientes.tbDatosCl, filaSeleccionada, 6, "");
+            String telefono = getCellValueOrDefault(vistaClientes.tbDatosCl, filaSeleccionada, 7, "");
+            String direccion = getCellValueOrDefault(vistaClientes.tbDatosCl, filaSeleccionada, 8, "");
+            String dui = getCellValueOrDefault(vistaClientes.tbDatosCl, filaSeleccionada, 9, "");
 
-        private String getCellValueOrDefault(JTable table, int row, int col, String defaultValue) {
-            Object value = table.getValueAt(row, col);
-            return value != null ? value.toString() : defaultValue;
-        }
-    
-        private void limpiarCamposTexto() {
+            vistaClientes.txtUser.setText(usuario);
+            vistaClientes.txtName.setText(nombre);
+            vistaClientes.txtApe.setText(apellido);
+            vistaClientes.txtTel.setText(telefono);
+            vistaClientes.txtDirec.setText(direccion);
+            vistaClientes.txtDui.setText(dui);
+            vistaClientes.txtCorreo.setText(correo);
+            // Desencriptar y mostrar la contraseña en el campo de texto
+            String contraDesencriptada = crypt.decryptPassword(contraEncrypted);
+            vistaClientes.txtContra.setText(contraDesencriptada);
+        } else {
+            // Si no hay filas seleccionadas o la selección es inválida, limpiamos los campos de texto.
             vistaClientes.txtUser.setText("");
             vistaClientes.txtName.setText("");
             vistaClientes.txtApe.setText("");
             vistaClientes.txtTel.setText("");
-            vistaClientes.txtDui.setText("");
             vistaClientes.txtDirec.setText("");
+            vistaClientes.txtDui.setText("");
             vistaClientes.txtCorreo.setText("");
             vistaClientes.txtContra.setText("");
         }
+    }
+
+    private String getCellValueOrDefault(JTable table, int row, int col, String defaultValue) {
+        Object value = table.getValueAt(row, col);
+        return value != null ? value.toString() : defaultValue;
+    }
+
+    private void limpiarCamposTexto() {
+        vistaClientes.txtUser.setText("");
+        vistaClientes.txtName.setText("");
+        vistaClientes.txtApe.setText("");
+        vistaClientes.txtTel.setText("");
+        vistaClientes.txtDui.setText("");
+        vistaClientes.txtDirec.setText("");
+        vistaClientes.txtCorreo.setText("");
+        vistaClientes.txtContra.setText("");
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-       /*if (e.getSource() == vistaClientes.btnAgregarUsuario) {
+        /*if (e.getSource() == vistaClientes.btnAgregarUsuario) {
             int idTipoUsuario = 5; // Nivel de usuario fijo: 5 para Cliente
             String usuario = vistaClientes.txtUser.getText();
             String contra = vistaClientes.txtContra.getText();
@@ -191,9 +194,9 @@ public class cCliente implements  ActionListener, MouseListener{
                 JOptionPane.showMessageDialog(null, "Debe seleccionar un usuario de la tabla.");
             }
         }
-         
+
         if (e.getSource() == vistaClientes.btnEliminar) {
-             int filaSeleccionada = vistaClientes.tbDatosCl.getSelectedRow();
+            int filaSeleccionada = vistaClientes.tbDatosCl.getSelectedRow();
             if (filaSeleccionada >= 0) {
                 int idUsuario = Integer.parseInt(vistaClientes.tbDatosCl.getValueAt(filaSeleccionada, 4).toString());
                 modeloCliente.setIdUsuario(idUsuario);
@@ -218,7 +221,6 @@ public class cCliente implements  ActionListener, MouseListener{
                 String direccion = vistaClientes.txtDirec.getText();
                 String dui = vistaClientes.txtDui.getText();
 
-
                 modeloCliente.setIdCliente(idCliente);
                 modeloCliente.setNombre(nom);
                 modeloCliente.setApellido(apel);
@@ -234,35 +236,32 @@ public class cCliente implements  ActionListener, MouseListener{
             } else {
                 JOptionPane.showMessageDialog(vistaClientes, "Debe seleccionar un cliente de la tabla.");
             }
-        }    
-  }
-    
-
-
+        }
+    }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        
+
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        
+
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        
+
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        
+
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-   
+
 }
