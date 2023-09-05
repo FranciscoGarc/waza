@@ -7,6 +7,7 @@ package Vista;
 import Controlador.cCliente;
 import Modelo.mUser;
 import Controlador.cUser;
+import Modelo.Valida;
 import Modelo.crypt;
 import Modelo.mCliente;
 import java.sql.ResultSet;
@@ -29,10 +30,13 @@ public class pnlLogin extends javax.swing.JPanel {
     private int idTipoUs;
     private int idUsers;
     private int idCuenta;
+    
+
     public pnlLogin() {
         initComponents();
         
-
+        txtUser.setDocument(new Valida(30, "[a-zA-Z0-9]*"));
+        txtContra.setDocument(new Valida(8, "[a-zA-Z0-9]*"));
     }
 
     /**
@@ -84,7 +88,7 @@ public class pnlLogin extends javax.swing.JPanel {
                 btnIngresarActionPerformed(evt);
             }
         });
-        pBg.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 560, 170, 50));
+        pBg.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 570, 170, 50));
 
         pLogin.setkEndColor(new java.awt.Color(0, 0, 0));
         pLogin.setkStartColor(new java.awt.Color(0, 0, 0));
@@ -172,9 +176,9 @@ public class pnlLogin extends javax.swing.JPanel {
                 .addGap(127, 127, 127))
         );
 
-        pBg.add(pLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 570, 360));
+        pBg.add(pLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 570, 360));
 
-        add(pBg, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 2, 830, 650));
+        add(pBg, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 2, 830, 670));
     }// </editor-fold>//GEN-END:initComponents
         public void SelectID() throws SQLException {
         try {

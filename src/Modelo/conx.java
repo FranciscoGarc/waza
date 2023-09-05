@@ -11,10 +11,10 @@ public class conx { // <- Editar por el nombre del archivo de la clase
     public static Connection getConexion(){
         
          //Cadena de conexión
-        String conexionUrl  = "jdbc:sqlserver://localhost:51960;" // <- Editar por su puerto de SQL
+        String conexionUrl  = "jdbc:sqlserver://localhost:58233;" // <- Editar por su puerto de SQL
                             + "databaseName=RScars;" // <- Editar por su base de datos
-                            + "user=sa;"
-                            + "password=itr2023;" 
+                            + "user=saaa;"
+                            + "password=itr23;" 
                             + "encrypt=true;trustServerCertificate=true";
         
         //Retornamos la conexion

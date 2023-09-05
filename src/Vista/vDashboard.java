@@ -58,9 +58,9 @@ int xMouse, yMouse;
         kButton8 = new com.k33ptoo.components.KButton();
         kButton9 = new com.k33ptoo.components.KButton();
         kButton10 = new com.k33ptoo.components.KButton();
+        kButton11 = new com.k33ptoo.components.KButton();
         PPrincipal = new com.k33ptoo.components.KGradientPanel();
         imgBg = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -117,7 +117,7 @@ int xMouse, yMouse;
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        PBg.add(pArriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 40));
+        PBg.add(pArriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 40));
 
         PMenu.setkEndColor(new java.awt.Color(0, 153, 0));
         PMenu.setkStartColor(new java.awt.Color(51, 102, 0));
@@ -134,7 +134,12 @@ int xMouse, yMouse;
         kButton2.setkPressedColor(new java.awt.Color(255, 102, 102));
         kButton2.setkSelectedColor(new java.awt.Color(255, 153, 153));
         kButton2.setkStartColor(new java.awt.Color(0, 102, 102));
-        PMenu.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 830, 110, 50));
+        kButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton2ActionPerformed(evt);
+            }
+        });
+        PMenu.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 620, 110, 50));
 
         kButton6.setText("Control de usuarios");
         kButton6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -157,7 +162,7 @@ int xMouse, yMouse;
                 kButton6ActionPerformed(evt);
             }
         });
-        PMenu.add(kButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 220, 100));
+        PMenu.add(kButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 220, 50));
 
         kButton7.setText("Control de mecanicos");
         kButton7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -175,7 +180,7 @@ int xMouse, yMouse;
                 kButton7MouseClicked(evt);
             }
         });
-        PMenu.add(kButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 220, 100));
+        PMenu.add(kButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 220, 50));
 
         kButton8.setText("Control de contadores");
         kButton8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -188,9 +193,9 @@ int xMouse, yMouse;
         kButton8.setkPressedColor(new java.awt.Color(0, 102, 0));
         kButton8.setkSelectedColor(new java.awt.Color(0, 102, 102));
         kButton8.setkStartColor(new java.awt.Color(0, 102, 102));
-        PMenu.add(kButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 220, 100));
+        PMenu.add(kButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 220, 50));
 
-        kButton9.setText("Reporte de clientes");
+        kButton9.setText("Reporte de clientes c/P");
         kButton9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         kButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         kButton9.setkBackGroundColor(new java.awt.Color(0, 102, 51));
@@ -206,7 +211,12 @@ int xMouse, yMouse;
                 kButton9MouseClicked(evt);
             }
         });
-        PMenu.add(kButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, 220, 100));
+        kButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton9ActionPerformed(evt);
+            }
+        });
+        PMenu.add(kButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 220, 60));
 
         kButton10.setText("Control de recepcionistas");
         kButton10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -219,25 +229,39 @@ int xMouse, yMouse;
         kButton10.setkPressedColor(new java.awt.Color(0, 102, 0));
         kButton10.setkSelectedColor(new java.awt.Color(0, 102, 102));
         kButton10.setkStartColor(new java.awt.Color(0, 102, 102));
-        PMenu.add(kButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 220, 100));
+        PMenu.add(kButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 220, 50));
+
+        kButton11.setText("Reporte de clientes");
+        kButton11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        kButton11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        kButton11.setkBackGroundColor(new java.awt.Color(0, 102, 51));
+        kButton11.setkEndColor(new java.awt.Color(51, 204, 0));
+        kButton11.setkForeGround(new java.awt.Color(0, 0, 0));
+        kButton11.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        kButton11.setkHoverStartColor(new java.awt.Color(0, 204, 51));
+        kButton11.setkPressedColor(new java.awt.Color(0, 102, 0));
+        kButton11.setkSelectedColor(new java.awt.Color(0, 102, 102));
+        kButton11.setkStartColor(new java.awt.Color(0, 102, 102));
+        kButton11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                kButton11MouseClicked(evt);
+            }
+        });
+        PMenu.add(kButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 220, 50));
 
         PBg.add(PMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 240, 890));
 
         PPrincipal.setLayout(new java.awt.BorderLayout());
+        PBg.add(PPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, 890));
 
         imgBg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bg1.png"))); // NOI18N
-        PPrincipal.add(imgBg, java.awt.BorderLayout.CENTER);
-
-        PBg.add(PPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 960, 890));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bg1.png"))); // NOI18N
-        PBg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1200, 760));
+        PBg.add(imgBg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 1290, 890));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PBg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PBg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,12 +297,24 @@ int xMouse, yMouse;
     }//GEN-LAST:event_kButton6ActionPerformed
 
     private void kButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kButton9MouseClicked
-        ShowJPanel(new pnlReporteClientes());
+        ShowJPanel(new pnlReporteClientesPa());
     }//GEN-LAST:event_kButton9MouseClicked
 
     private void kButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kButton7MouseClicked
         ShowJPanel(new pnlContolMecanicos());
     }//GEN-LAST:event_kButton7MouseClicked
+
+    private void kButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kButton11MouseClicked
+        ShowJPanel(new pnlReporteClientes());
+    }//GEN-LAST:event_kButton11MouseClicked
+
+    private void kButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kButton9ActionPerformed
+
+    private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_kButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -321,9 +357,9 @@ int xMouse, yMouse;
     private static com.k33ptoo.components.KGradientPanel PPrincipal;
     private javax.swing.JLabel btnExit;
     private javax.swing.JLabel imgBg;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private com.k33ptoo.components.KButton kButton10;
+    private com.k33ptoo.components.KButton kButton11;
     private com.k33ptoo.components.KButton kButton2;
     private com.k33ptoo.components.KButton kButton6;
     private com.k33ptoo.components.KButton kButton7;

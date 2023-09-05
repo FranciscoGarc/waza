@@ -19,23 +19,25 @@ import net.sf.jasperreports.view.JasperViewer;
  *
  * @author Fran
  */
-public class pnlReporteClientes extends javax.swing.JPanel {
+public class pnlReporteClientesPa extends javax.swing.JPanel {
 
     /**
      * Creates new form pnlReporteClientes
      */
-    public pnlReporteClientes() {
+    public pnlReporteClientesPa() {
         initComponents();
     }
 
-  private void mostrarReporte() {
-        try {        
-            
-            JasperReport report = (JasperReport) JRLoader.loadObjectFromFile("src/Reportes/Clientes.jasper");
-            JasperPrint jprint = JasperFillManager.fillReport(report, null, conx.getConexion());
+    private void mostrarReporte() {
+        try {
+            Map<String, Object> parametros = new HashMap<>();
+            parametros.put("Nombre", txtUsuario.getText());
+
+            JasperReport report = (JasperReport) JRLoader.loadObjectFromFile("src/Reportes/ClientesAPa.jasper");
+            JasperPrint jprint = JasperFillManager.fillReport(report, parametros, conx.getConexion());
 
             JasperViewer view = new JasperViewer(jprint, false);
-            view.setTitle("Nombre Reporte");
+            view.setTitle("Reporte clientes");
             view.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
             view.setVisible(true);
 
@@ -44,7 +46,6 @@ public class pnlReporteClientes extends javax.swing.JPanel {
         }
     }
 
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -56,6 +57,7 @@ public class pnlReporteClientes extends javax.swing.JPanel {
 
         PPrincipal = new com.k33ptoo.components.KGradientPanel();
         btnAgregarUsuario = new com.k33ptoo.components.KButton();
+        txtUsuario = new javax.swing.JTextField();
         imgBgP = new javax.swing.JLabel();
 
         PPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -77,6 +79,7 @@ public class pnlReporteClientes extends javax.swing.JPanel {
             }
         });
         PPrincipal.add(btnAgregarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 590, 170, 50));
+        PPrincipal.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 320, 50));
 
         imgBgP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bg1.png"))); // NOI18N
         PPrincipal.add(imgBgP, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 890));
@@ -110,5 +113,6 @@ public class pnlReporteClientes extends javax.swing.JPanel {
     private com.k33ptoo.components.KGradientPanel PPrincipal;
     public com.k33ptoo.components.KButton btnAgregarUsuario;
     private javax.swing.JLabel imgBgP;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

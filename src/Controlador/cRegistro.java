@@ -56,6 +56,8 @@ public class cRegistro implements ActionListener {
         this.vistaRegistro = vistaRegistro;
         this.modelNivelesUsuario = modeloNivelesUsuario;
         this.vistaRegistro.btnUser.addActionListener(this);
+        vistaRegistro.txtUs.setDocument(new Valida(30, "[a-zA-Z0-9]*"));
+        vistaRegistro.txtContras.setDocument(new Valida(8, "[a-zA-Z0-9]*"));
 
     }
 
@@ -63,6 +65,7 @@ public class cRegistro implements ActionListener {
 
         vistaRegistro.txtCorre.setText("");
         vistaRegistro.txtContras.setText("");
+        vistaRegistro.txtUs.setText("");
     }
 
     private boolean isValidEmail(String email) {
@@ -75,37 +78,35 @@ public class cRegistro implements ActionListener {
         if (e.getSource() == vistaRegistro.btnUser) {
 
             try {
-                vistaRegistro.txtUs.setDocument(new Valida(30, "[a-zA-Z0-9]*"));
-                vistaRegistro.txtContras.setDocument(new Valida(8, "[a-zA-Z0-9]*"));
-
                 String idTipoUsuario = vistaRegistro.cbLista.getSelectedItem().toString();
                 String usuario = vistaRegistro.txtUs.getText();
                 String contra = vistaRegistro.txtContras.getText();
                 String correo = vistaRegistro.txtCorre.getText();
 
-                /*
-            if (vistaRegistro.txtUs.getText().length() <4 ||vistaRegistro.txtContras.getText().length() <8  ) {
-                JOptionPane.showMessageDialog(null, "La contraseña debe tener 8 caracteres como minimo y el usuario 4");
-            } else { 
-            if (!isValidEmail(correo) ) {
-                JOptionPane.showMessageDialog(null, "Ingrese un correo valido");
-            } else { 
-            if (usuario.isEmpty() || contra.isEmpty() || correo.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Llene todos los campos.");
-            } else { 
-                String encryptedPassword = crypt.encryptPassword(contra);
-                modelNivelesUsuario.setTipo(idTipoUsuario);
-                modeloUsuario.setUsuario(usuario);
-                modeloUsuario.setContra(encryptedPassword);
-                modeloUsuario.setCorreo(correo);*/
-                // Aquí puedes llamar a la función que genera el error
-                modelNivelesUsuario.traerIdDeTbTipo(modeloUsuario, modelNivelesUsuario);
+                if (vistaRegistro.txtUs.getText().length() < 4 || vistaRegistro.txtContras.getText().length() < 8) {
+                    JOptionPane.showMessageDialog(null, "La contraseña debe tener 8 caracteres como minimo y el usuario 4");
+                } else if (!isValidEmail(correo)) {
+                    JOptionPane.showMessageDialog(null, "Ingrese un correo valido");
+                } else {
+                    if (usuario.isEmpty() || contra.isEmpty() || correo.isEmpty()) {
+                        JOptionPane.showMessageDialog(null, "Llene todos los campos.");
+                    } else {
+                        String encryptedPassword = crypt.encryptPassword(contra);
+                        modelNivelesUsuario.setTipo(idTipoUsuario);
+                        modeloUsuario.setUsuario(usuario);
+                        modeloUsuario.setContra(encryptedPassword);
+                        modeloUsuario.setCorreo(correo);
+                        // Aquí puedes llamar a la función que genera el error
+                        modelNivelesUsuario.traerIdDeTbTipo(modeloUsuario, modelNivelesUsuario);
 
-                modeloUsuario.AgregarUsuarioR(modeloUsuario, modelNivelesUsuario);
+                        modeloUsuario.AgregarUsuarioR(modeloUsuario, modelNivelesUsuario);
 
-                JOptionPane.showMessageDialog(vistaRegistro, "Usuario registrado");
-                limpiarCamposTextoUsuario();
+                        JOptionPane.showMessageDialog(vistaRegistro, "Usuario registrado");
+                        limpiarCamposTextoUsuario();
 
+                    }
+
+                }
             } catch (Exception ex) {
                 // Captura cualquier excepción que ocurra durante la ejecución del bloque try
                 ex.printStackTrace();
