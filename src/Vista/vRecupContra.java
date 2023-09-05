@@ -302,6 +302,7 @@ public class vRecupContra extends javax.swing.JFrame {
         vLogin login = new vLogin();
         
         login.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnCambiarMouseClicked
 
     private void btnVerificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVerificarMouseClicked

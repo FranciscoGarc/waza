@@ -4,6 +4,11 @@
  */
 package Vista;
 
+import Controlador.cContadores;
+import Controlador.cUsuarioCo;
+import Modelo.mContadores;
+import Modelo.mUsuario;
+
 /**
  *
  * @author hwrna
@@ -13,8 +18,18 @@ public class ControlContadores extends javax.swing.JPanel {
     /**
      * Creates new form ControlContadores
      */
+    private mContadores modeloContadores;
+    private cContadores controlContadores;
+    private mUsuario modeloUsuario;
+    private cUsuarioCo controlCon;
+    
+    
     public ControlContadores() {
         initComponents();
+        modeloUsuario = new mUsuario();
+        controlCon = new cUsuarioCo(this, modeloUsuario);
+        modeloContadores = new mContadores();
+        controlContadores = new cContadores(this, modeloContadores);
     }
 
     /**
@@ -59,8 +74,8 @@ public class ControlContadores extends javax.swing.JPanel {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Buscar:");
-        PPrincipal.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
-        PPrincipal.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 440, 39));
+        PPrincipal.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
+        PPrincipal.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 440, 39));
 
         btnRegistrar.setText("Registrar contador");
         btnRegistrar.setkBorderRadius(20);
@@ -68,7 +83,7 @@ public class ControlContadores extends javax.swing.JPanel {
         btnRegistrar.setkHoverForeGround(new java.awt.Color(51, 153, 0));
         btnRegistrar.setkHoverStartColor(new java.awt.Color(51, 255, 51));
         btnRegistrar.setkStartColor(new java.awt.Color(153, 153, 153));
-        PPrincipal.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 810, 170, 50));
+        PPrincipal.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 190, 170, 50));
 
         btnEliminar.setText("Despedir contador");
         btnEliminar.setkBorderRadius(20);
@@ -86,7 +101,7 @@ public class ControlContadores extends javax.swing.JPanel {
                 btnEliminarActionPerformed(evt);
             }
         });
-        PPrincipal.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 810, 170, 50));
+        PPrincipal.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 330, 170, 50));
 
         btnActualizar.setText("Actualizar contador");
         btnActualizar.setkBorderRadius(20);
@@ -94,7 +109,7 @@ public class ControlContadores extends javax.swing.JPanel {
         btnActualizar.setkHoverForeGround(new java.awt.Color(51, 153, 0));
         btnActualizar.setkHoverStartColor(new java.awt.Color(51, 255, 51));
         btnActualizar.setkStartColor(new java.awt.Color(153, 153, 153));
-        PPrincipal.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 810, 170, 50));
+        PPrincipal.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 260, 170, 50));
 
         btnAgregarUsuario.setText("Agregar Usuario");
         btnAgregarUsuario.setkBorderRadius(20);
@@ -112,7 +127,7 @@ public class ControlContadores extends javax.swing.JPanel {
                 btnAgregarUsuarioActionPerformed(evt);
             }
         });
-        PPrincipal.add(btnAgregarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 810, 170, 50));
+        PPrincipal.add(btnAgregarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 120, 170, 50));
 
         tbDatosCl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -135,7 +150,7 @@ public class ControlContadores extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tbDatosCl);
 
-        PPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 590, 730, 180));
+        PPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 560, 730, 180));
 
         pLogin.setkEndColor(new java.awt.Color(0, 0, 0));
         pLogin.setkStartColor(new java.awt.Color(0, 0, 0));
@@ -255,19 +270,19 @@ public class ControlContadores extends javax.swing.JPanel {
                 .addGroup(pLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtDui, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        PPrincipal.add(pLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 820, 480));
+        PPrincipal.add(pLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 820, 480));
 
         imgBgP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bg1.png"))); // NOI18N
-        PPrincipal.add(imgBgP, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 890));
+        PPrincipal.add(imgBgP, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 890));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 980, Short.MAX_VALUE)
+            .addGap(0, 1070, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(PPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

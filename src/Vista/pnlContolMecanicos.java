@@ -21,13 +21,14 @@ public class pnlContolMecanicos extends javax.swing.JPanel {
     /**
      * Creates new form pnlContolMecanicos
      */
-        private mMecanicos modeloMecanicos;
+    private mMecanicos modeloMecanicos;
     private cMecanicos controladorMecanicos;
     private mUsuario modeloUsuario;
     private cUsuarioM controladorUsuario;
+
     public pnlContolMecanicos() {
         initComponents();
-       modeloUsuario = new mUsuario();
+        modeloUsuario = new mUsuario();
         controladorUsuario = new cUsuarioM(this, modeloUsuario);
         modeloMecanicos = new mMecanicos();
         controladorMecanicos = new cMecanicos(this, modeloMecanicos);

@@ -4,6 +4,11 @@
  */
 package Vista;
 
+import Controlador.cRecep;
+import Controlador.cUsuarioRe;
+import Modelo.mRecep;
+import Modelo.mUsuario;
+
 /**
  *
  * @author hwrna
@@ -13,8 +18,18 @@ public class ControlRecepcionista extends javax.swing.JPanel {
     /**
      * Creates new form ControlRecepcionista
      */
+    private mRecep modeloRecep;
+    private cRecep controlRecep;
+    private mUsuario modeloUsuario;
+    private cUsuarioRe controlUserco;
+
     public ControlRecepcionista() {
         initComponents();
+        modeloUsuario = new mUsuario();
+        controlUserco = new cUsuarioRe(this, modeloUsuario);
+        modeloRecep = new mRecep();
+        controlRecep = new cRecep(this, modeloRecep);
+        
     }
 
     /**
@@ -26,7 +41,6 @@ public class ControlRecepcionista extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         PPrincipal = new com.k33ptoo.components.KGradientPanel();
         jLabel9 = new javax.swing.JLabel();
         txtSearch = new javax.swing.JTextField();
@@ -60,8 +74,8 @@ public class ControlRecepcionista extends javax.swing.JPanel {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Buscar:");
-        PPrincipal.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
-        PPrincipal.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 440, 39));
+        PPrincipal.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
+        PPrincipal.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 440, 39));
 
         btnRegistrar.setText("Registrar recepcionista");
         btnRegistrar.setkBorderRadius(20);
@@ -69,7 +83,7 @@ public class ControlRecepcionista extends javax.swing.JPanel {
         btnRegistrar.setkHoverForeGround(new java.awt.Color(51, 153, 0));
         btnRegistrar.setkHoverStartColor(new java.awt.Color(51, 255, 51));
         btnRegistrar.setkStartColor(new java.awt.Color(153, 153, 153));
-        PPrincipal.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 810, 170, 50));
+        PPrincipal.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 190, 170, 50));
 
         btnEliminar.setText("Despedir recepcionista");
         btnEliminar.setkBorderRadius(20);
@@ -87,7 +101,7 @@ public class ControlRecepcionista extends javax.swing.JPanel {
                 btnEliminarActionPerformed(evt);
             }
         });
-        PPrincipal.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 810, 170, 50));
+        PPrincipal.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 330, 170, 50));
 
         btnActualizar.setText("Actualizar recepcionista");
         btnActualizar.setkBorderRadius(20);
@@ -95,7 +109,7 @@ public class ControlRecepcionista extends javax.swing.JPanel {
         btnActualizar.setkHoverForeGround(new java.awt.Color(51, 153, 0));
         btnActualizar.setkHoverStartColor(new java.awt.Color(51, 255, 51));
         btnActualizar.setkStartColor(new java.awt.Color(153, 153, 153));
-        PPrincipal.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 810, 170, 50));
+        PPrincipal.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 260, 170, 50));
 
         btnAgregarUsuario.setText("Agregar Usuario");
         btnAgregarUsuario.setkBorderRadius(20);
@@ -113,7 +127,7 @@ public class ControlRecepcionista extends javax.swing.JPanel {
                 btnAgregarUsuarioActionPerformed(evt);
             }
         });
-        PPrincipal.add(btnAgregarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 810, 170, 50));
+        PPrincipal.add(btnAgregarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 120, 170, 50));
 
         tbDatosCl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -136,7 +150,7 @@ public class ControlRecepcionista extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tbDatosCl);
 
-        PPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 590, 730, 180));
+        PPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 560, 730, 180));
 
         pLogin.setkEndColor(new java.awt.Color(0, 0, 0));
         pLogin.setkStartColor(new java.awt.Color(0, 0, 0));
@@ -256,48 +270,27 @@ public class ControlRecepcionista extends javax.swing.JPanel {
                 .addGroup(pLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtDui, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        PPrincipal.add(pLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 820, 480));
+        PPrincipal.add(pLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 820, 480));
 
         imgBgP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bg1.png"))); // NOI18N
-        PPrincipal.add(imgBgP, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 890));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 980, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(PPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 890, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(PPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        PPrincipal.add(imgBgP, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 890));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 980, Short.MAX_VALUE)
+            .addGap(0, 1070, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(PPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 890, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(PPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -338,7 +331,6 @@ public class ControlRecepcionista extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private com.k33ptoo.components.KGradientPanel pLogin;
     public javax.swing.JTable tbDatosCl;

@@ -193,6 +193,11 @@ int xMouse, yMouse;
         kButton8.setkPressedColor(new java.awt.Color(0, 102, 0));
         kButton8.setkSelectedColor(new java.awt.Color(0, 102, 102));
         kButton8.setkStartColor(new java.awt.Color(0, 102, 102));
+        kButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton8ActionPerformed(evt);
+            }
+        });
         PMenu.add(kButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 220, 50));
 
         kButton9.setText("Reporte de clientes c/P");
@@ -229,6 +234,11 @@ int xMouse, yMouse;
         kButton10.setkPressedColor(new java.awt.Color(0, 102, 0));
         kButton10.setkSelectedColor(new java.awt.Color(0, 102, 102));
         kButton10.setkStartColor(new java.awt.Color(0, 102, 102));
+        kButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton10ActionPerformed(evt);
+            }
+        });
         PMenu.add(kButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 220, 50));
 
         kButton11.setText("Reporte de clientes");
@@ -315,6 +325,14 @@ int xMouse, yMouse;
     private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
         this.dispose();
     }//GEN-LAST:event_kButton2ActionPerformed
+
+    private void kButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton8ActionPerformed
+        ShowJPanel(new ControlContadores());
+    }//GEN-LAST:event_kButton8ActionPerformed
+
+    private void kButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton10ActionPerformed
+        ShowJPanel(new ControlRecepcionista());
+    }//GEN-LAST:event_kButton10ActionPerformed
 
     /**
      * @param args the command line arguments
