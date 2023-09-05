@@ -249,13 +249,13 @@ int xMouse, yMouse;
         });
         PMenu.add(kButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 220, 50));
 
-        PBg.add(PMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 240, 890));
+        PBg.add(PMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 240, 810));
 
         PPrincipal.setLayout(new java.awt.BorderLayout());
         PBg.add(PPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, 890));
 
         imgBg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bg1.png"))); // NOI18N
-        PBg.add(imgBg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 1290, 890));
+        PBg.add(imgBg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 1290, 810));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -265,7 +265,7 @@ int xMouse, yMouse;
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PBg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PBg, javax.swing.GroupLayout.PREFERRED_SIZE, 846, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

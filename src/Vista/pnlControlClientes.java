@@ -95,8 +95,8 @@ public class pnlControlClientes extends javax.swing.JPanel {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Buscar:");
-        PPrincipal.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, -1, -1));
-        PPrincipal.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 440, 39));
+        PPrincipal.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, -1));
+        PPrincipal.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 440, 39));
 
         btnRegistrar.setText("Registrar cliente");
         btnRegistrar.setkBorderRadius(20);
@@ -309,7 +309,7 @@ public class pnlControlClientes extends javax.swing.JPanel {
         PPrincipal.add(pLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 820, 480));
 
         imgBgP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bg1.png"))); // NOI18N
-        PPrincipal.add(imgBgP, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 890));
+        PPrincipal.add(imgBgP, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 810));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -321,7 +321,7 @@ public class pnlControlClientes extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 890, Short.MAX_VALUE)
+            .addGap(0, 810, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(PPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

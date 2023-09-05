@@ -134,6 +134,11 @@ public class vDashboardMec extends javax.swing.JFrame {
         kButton2.setkPressedColor(new java.awt.Color(255, 102, 102));
         kButton2.setkSelectedColor(new java.awt.Color(255, 153, 153));
         kButton2.setkStartColor(new java.awt.Color(0, 102, 102));
+        kButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton2ActionPerformed(evt);
+            }
+        });
         PMenu.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 820, 110, 50));
 
         kButton6.setText("Vista de clientes");
@@ -249,6 +254,10 @@ public class vDashboardMec extends javax.swing.JFrame {
         // TODO add your handling code here:
         ShowJPanel(new pnlVistaVehiculos());
     }//GEN-LAST:event_kButton7MouseClicked
+
+    private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
+       this.dispose();
+    }//GEN-LAST:event_kButton2ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -30,7 +30,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PBg" alignment="0" max="32767" attributes="0"/>
+          <Component id="PBg" min="-2" pref="846" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -124,7 +124,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="40" width="240" height="890"/>
+              <AbsoluteConstraints x="0" y="40" width="240" height="810"/>
             </Constraint>
           </Constraints>
 
@@ -437,7 +437,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="40" width="1290" height="890"/>
+              <AbsoluteConstraints x="10" y="40" width="1290" height="810"/>
             </Constraint>
           </Constraints>
         </Component>
