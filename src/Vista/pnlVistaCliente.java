@@ -208,10 +208,10 @@ public class pnlVistaCliente extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        PPrincipal1.add(pLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 820, 480));
+        PPrincipal1.add(pLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 820, 480));
 
         imgBgP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bg1.png"))); // NOI18N
-        PPrincipal1.add(imgBgP, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 810));
+        PPrincipal1.add(imgBgP, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 880));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -223,7 +223,7 @@ public class pnlVistaCliente extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 810, Short.MAX_VALUE)
+            .addGap(0, 880, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(PPrincipal1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -239,10 +239,7 @@ public class pnlVistaCliente extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.k33ptoo.components.KGradientPanel PPrincipal;
     private com.k33ptoo.components.KGradientPanel PPrincipal1;
-    public com.k33ptoo.components.KButton btnAgregarUsuario;
-    public com.k33ptoo.components.KButton btnRegistrar;
     private javax.swing.JLabel imgBgP;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -253,7 +250,6 @@ public class pnlVistaCliente extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private com.k33ptoo.components.KGradientPanel pLogin;
     public javax.swing.JTable tbDatosCl;
@@ -263,7 +259,6 @@ public class pnlVistaCliente extends javax.swing.JPanel {
     public javax.swing.JTextField txtDirec;
     public javax.swing.JTextField txtDui;
     public javax.swing.JTextField txtName;
-    public javax.swing.JTextField txtSearch;
     public javax.swing.JTextField txtSearch1;
     public javax.swing.JTextField txtTel;
     public javax.swing.JTextField txtUser;
